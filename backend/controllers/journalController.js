@@ -1,5 +1,6 @@
 const Journal = require("../models/journalModel");
 
+//addJournal
 const addJournal = async (req, res) => {
   try {
     const { mood, stressLevel, note } = req.body;
