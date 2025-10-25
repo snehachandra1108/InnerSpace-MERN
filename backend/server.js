@@ -18,18 +18,17 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log('MongoDB connection error:', err));
 
-// API Routes
-// Example:
+// Example API routes (uncomment when you add them)
 // const journalRoutes = require('./routes/journalRoutes');
 // app.use('/api/journals', journalRoutes);
 
-// Serve React frontend
+// Serve frontend
 app.use(express.static(path.join(__dirname, '../frontend/build')));
-
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
